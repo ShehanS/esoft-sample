@@ -13,5 +13,22 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-button color="warning" (click)="add()">ADD</ion-button>
+
+  <ion-card *ngFor="let item of items; index as i">
+    <ion-card-header>
+      <ion-card-title>
+        {{i}}-{{item?.name}}
+      </ion-card-title>
+     
+    </ion-card-header>
+    <ion-card-content>
+      {{item?.value}}
+ 
+      <ion-button color="warning" (click)="remove(i)">Remove</ion-button>
+      </ion-card-content>
+  </ion-card>
+
+
+
 </ion-content>
